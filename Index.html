@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>حكايتنا ❤️</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #160018, #4b003f, #12001d);
+      color: white;
+      text-align: center;
+      overflow-x: hidden;
+    }
+
+    .screen {
+      min-height: 100vh;
+      display: none;
+      padding: 35px 20px;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      animation: fade 0.8s ease;
+    }
+
+    .active {
+      display: flex;
+    }
+
+    @keyframes fade {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .logo {
+      font-size: 70px;
+      margin-bottom: 15px;
+      animation: heart 1.5s infinite;
+    }
+
+    @keyframes heart {
+      0%, 100% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.15);
+      }
+    }
+
+    h1 {
+      font-size: 32px;
+      margin: 15px 0;
+    }
+
+    h2 {
+      font-size: 27px;
+      margin: 15px 0;
+    }
+
+    p {
+      max-width: 750px;
+      line-height: 2;
+      font-size: 19px;
+    }
+
+    input {
+      width: min(350px, 90%);
+      padding: 15px;
+      border-radius: 15px;
+      border: none;
+      outline: none;
+      text-align: center;
+      font-size: 18px;
+      margin: 15px;
+    }
+
+    button {
+      border: none;
+      padding: 14px 28px;
+      border-radius: 30px;
+      font-size: 18px;
+      cursor: pointer;
+      background: white;
+      color: #650052;
+      margin: 12px;
+      transition: 0.3s;
+      font-weight: bold;
+    }
+
+    button:hover {
+      transform: scale(1.07);
+    }
+
+    .error {
+      color: #ff9eae;
+      min-height: 25px;
+    }
+
+    .languages {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 12px;
+      width: min(900px, 95%);
+      margin: 20px auto;
+    }
+
+    .love {
+      background: rgba(255,255,255,0.1);
+      padding: 15px;
+      border-radius: 15px;
+      backdrop-filter: blur(5px);
+    }
+
+    .ring {
+      font-size: 100px;
+      cursor: pointer;
+      animation: ringGlow 1.5s infinite;
+      margin: 20px;
+    }
+
+    @keyframes ringGlow {
+      0%, 100% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.12);
+      }
+    }
+
+    .gift {
+      font-size: 110px;
+      cursor: pointer;
+      animation: giftMove 1.3s infinite;
+    }
+
+    @keyframes giftMove {
+      0%, 100% {
+        transform: rotate(0);
+      }
+      25% {
+        transform: rotate(-6deg);
+      }
+      75% {
+        transform: rotate(6deg);
+      }
+    }
+
+    .big-love {
+      font-size: 45px;
+      font-weight: bold;
+      margin: 25px;
+    }
+
+    .message-box {
+      background: rgba(255,255,255,0.1);
+      border-radius: 25px;
+      padding: 25px;
+      max-width: 800px;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- تسجيل الدخول -->
+  <section id="login" class="screen active">
+    <div class="logo">❤️</div>
+
+    <h1>بسم الله الرحمن الرحيم</h1>
+
+    <p>
+      فيه حكاية صغيرة، بس بالنسبة ليا معناها كبير جدًا...
+      لو عايز تبدأ الحكاية، اكتب كلمة السر.
+    </p>
+
+    <input
+      id="password"
+      type="password"
+      placeholder="اكتب كلمة السر"
+    >
+
+    <button onclick="checkPassword()">دخول ❤️</button>
+
+    <div id="error" class="error"></div>
+  </section>
+
+
+  <!-- البداية -->
+  <section id="start" class="screen">
+
+    <h1>بداية الحكاية ❤️</h1>
+
+    <div class="message-box">
+
+      <h2>أول يوم اتعرفنا فيه</h2>
+
+      <p>
+        ٢١ / ١١ / ٢٠٢٤
+      </p>
+
+      <p>
+        اليوم ده يمكن في وقته كان مجرد يوم عادي،
+        لكن بعد ما عرفت قيمته عندي، بقى تاريخ مش عادي خالص.
+        من اليوم ده بدأت حكاية مكنتش أعرف وقتها إنها هتسيب
+        جوايا كل الذكريات دي.
+      </p>
+
+    </div>
+
+    <button onclick="show('love')">كمّل الحكاية ❤️</button>
+
+  </section>
+
+
+  <!-- أول بحبك -->
+  <section id="love" class="screen">
+
+    <h1>وفي يوم تاني...</h1>
+
+    <div class="message-box">
+
+      <h2>أول يوم قلتلك فيه بحبك ❤️</h2>
+
+      <p>
+        ٢٤ / ٢ / ٢٠٢٥
+      </p>
+
+      <p>
+        يمكن كلمة "بحبك" عبارة عن كام حرف بس،
+        لكن لما بتتقال للشخص الصح بتبقى أكبر من مجرد كلمة.
+        ومن اليوم ده بقت الكلمة دي مرتبطة عندي بذكريات
+        ومواقف وضحك وكلام كتير عمره ما هيتنسي.
+      </p>
+
+    </div>
+
+    <button onclick="show('languages')">
+      كلمة صغيرة بكل اللغات 🌍❤️
+    </button>
+
+  </section>
+
+
+  <!-- بحبك بلغات كثيرة -->
+  <section id="languages" class="screen">
+
+    <h1>بحبك ❤️</h1>
+
+    <p>
+      مهما اختلفت اللغة، المعنى واحد...
+    </p>
+
+    <div class="languages">
+
+      <div class="love">العربية: بحبك ❤️</div>
+      <div class="love">English: I love you ❤️</div>
+      <div class="love">Español: Te amo ❤️</div>
+      <div class="love">Français: Je t'aime ❤️</div>
+      <div class="love">Italiano: Ti amo ❤️</div>
+      <div class="love">Deutsch: Ich liebe dich ❤️</div>
+      <div class="love">Português: Eu te amo ❤️</div>
+      <div class="love">Turkish: Seni seviyorum ❤️</div>
+      <div class="love">Greek: Σ' αγαπώ ❤️</div>
+      <div class="love">Russian: Я тебя люблю ❤️</div>
+      <div class="love">Japanese: 愛してる ❤️</div>
+      <div class="love">Korean: 사랑해 ❤️</div>
+      <div class="love">Chinese: 我爱你 ❤️</div>
+      <div class="love">Hindi: मैं तुमसे प्यार करता हूँ ❤️</div>
+      <div class="love">Dutch: Ik hou van je ❤️</div>
+      <div class="love">Swedish: Jag älskar dig ❤️</div>
+      <div class="love">Norwegian: Jeg elsker deg ❤️</div>
+      <div class="love">Polish: Kocham cię ❤️</div>
+      <div class="love">Romanian: Te iubesc ❤️</div>
+      <div class="love">Ukrainian: Я тебе кохаю ❤️</div>
+
+    </div>
+
+    <button onclick="show('sorry')">
+      رسالة من قلبي ❤️
+    </button>
+
+  </section>
+
+
+  <!-- الاعتذار -->
+  <section id="sorry" class="screen">
+
+    <h1>رسالة ليك ❤️</h1>
+
+    <div class="message-box">
+
+      <p>
+        أنا آسف...
+        وحقك عليا في كل حاجة حصلت مني ضايقتك أو زعلتك.
+      </p>
+
+      <p>
+        نفسي بجد متنسيش كل الحاجات الحلوة اللي كانت بينا،
+        ونفسي لو ينفع نسيب كل الغلطات اللي فاتت ورا ضهرنا،
+        ونفتح صفحة جديدة من غير ما نحمل الصفحة الجديدة
+        أخطاء الصفحة القديمة.
+      </p>
+
+      <p>
+        مش بقول إن كل حاجة لازم ترجع في لحظة،
+        لكن كل اللي بطلبه فرصة نبدأ من جديد،
+        بهدوء، وباحترام، ومن غير ما نكرر نفس الأخطاء.
+      </p>
+
+    </div>
+
+    <button onclick="show('ring')">
+      كمّل للنهاية 💍
+    </button>
+
+  </section>
+
+
+  <!-- الخاتم -->
+  <section id="ring" class="screen">
+
+    <h1>لحظة صغيرة... 💍</h1>
+
+    <p>
+      اضغط على الخاتم ❤️
+    </p>
+
+    <div class="ring" onclick="show('obsessed')">
+      💍
+    </div>
+
+  </section>
+
+
+  <!-- أنا بعشقك -->
+  <section id="obsessed" class="screen">
+
+    <div class="big-love">
+      أنا بعشقك ❤️
+    </div>
+
+    <div class="message-box">
+
+      <p>
+        ومهما حاولت أوصف الكلام اللي جوايا،
+        ساعات الكلمات نفسها بتبقى قليلة.
+      </p>
+
+      <p>
+        كل اللي أعرفه إن وجودك كان جزء جميل من حكايتي،
+        وإن الذكريات اللي بينا ليها مكان خاص عندي.
+      </p>
+
+    </div>
+
+    <button onclick="show('gift')">
+      فيه حاجة تانية ليك 🎁
+    </button>
+
+  </section>
+
+
+  <!-- الهدية -->
+  <section id="gift" class="screen">
+
+    <h1>بوكس هدية 🎁</h1>
+
+    <p>
+      اضغط على الهدية وشوف جواها إيه...
+    </p>
+
+    <div class="gift" onclick="show('final')">
+      🎁
+    </div>
+
+  </section>
+
+
+  <!-- النهاية -->
+  <section id="final" class="screen">
+
+    <div class="logo">❤️</div>
+
+    <h1>حقك عليا</h1>
+
+    <div class="message-box">
+
+      <p>
+        حقك عليا عن كل لحظة زعلتك فيها،
+        وعن كل كلمة مكنتش في مكانها،
+        وعن كل موقف كان ممكن أتصرف فيه بطريقة أحسن.
+      </p>
+
+      <p>
+        أتمنى لما تفتكر الحكاية دي،
+        تفتكر منها الحلو قبل أي حاجة تانية.
+      </p>
+
+      <p>
+        ويمكن أجمل حاجة نقدر نعملها
+        إننا نتعلم من اللي فات،
+        ونبدأ صفحة جديدة أحسن من كل اللي قبلها.
+      </p>
+
+      <h2>
+        ❤️ نهاية الحكاية... أو يمكن بداية جديدة ❤️
+      </h2>
+
+    </div>
+
+  </section>
+
+
+  <script>
+
+    function show(id) {
+      document.querySelectorAll(".screen").forEach(screen => {
+        screen.classList.remove("active");
+      });
+
+      document.getElementById(id).classList.add("active");
+
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      });
+    }
+
+    function checkPassword() {
+
+      const password =
+        document.getElementById("password").value;
+
+      const error =
+        document.getElementById("error");
+
+      if (password === "182010") {
+        error.textContent = "";
+        show("start");
+      } else {
+        error.textContent =
+          "كلمة السر مش صحيحة ❤️ حاول تاني";
+      }
+    }
+
+    document.getElementById("password").addEventListener("keydown", function(event) {
+      if (event.key === "Enter") {
+        checkPassword();
+      }
+    });
+
+  </script>
+
+</body>
+</html>
